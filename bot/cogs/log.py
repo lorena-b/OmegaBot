@@ -26,5 +26,6 @@ class Log(commands.Cog):
         if channel is not None:
             await channel.send(f'{member.mention} has left.')
 
+
 def setup(client):
     client.add_cog(Log(client))

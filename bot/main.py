@@ -5,7 +5,7 @@ from discord.ext import commands
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
-client = commands.Bot(command_prefix = '!')
+client = commands.Bot(command_prefix='!')
 
 """MANAGE EXTENSIONS """
 @client.command()
