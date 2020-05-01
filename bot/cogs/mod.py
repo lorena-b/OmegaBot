@@ -7,13 +7,17 @@ class Mod(commands.Cog):
     def __init__(self, client):
         self.client = client
 
-    @commands.Cog.listener()
-    async def on_ready(self):
-        print(f'Omega has connected to Discord!')
-
+    #return client ping 
     @commands.command()
     async def ping(self, ctx):
-        await ctx.send("Pong!")
+        await ctx.send(f'Client Ping: {round(self.client.latency * 1000)} ms')
+
+    #ban
+
+    #kick
+
+    #mute 
+
 
 def setup(client):
     client.add_cog(Mod(client))

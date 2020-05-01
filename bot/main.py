@@ -7,7 +7,7 @@ load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 client = commands.Bot(command_prefix='!')
 
-
+"""MANAGE EXTENSIONS """
 @client.command()
 async def load(ctx, extension):
     client.load_extension(f'cogs.{extension}')
