@@ -21,7 +21,7 @@ class Log(commands.Cog):
             await channel.send(f'Welcome {member.mention}!')
 
     # USER LEAVE
-    async def on_member_leave(self, member):
+    async def on_member_remove(self, member):
         channel = member.guild.system_channel
         if channel is not None:
             await channel.send(f'{member.mention} has left.')
