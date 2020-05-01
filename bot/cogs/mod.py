@@ -15,9 +15,15 @@ class Mod(commands.Cog):
 
     # ban
 
+    # unban
+
+    # banlist 
+
     # kick
 
     # mute
+
+    # unmute
 
 
 def setup(client):
