@@ -11,10 +11,6 @@ class Mod(commands.Cog):
     async def on_ready(self):
         print(f'Omega has connected to Discord!')
 
-    @commands.Cog.listener()
-    async def on_message_delete(self, message):
-        await self.client.send_message(message.channel, 'Message deleted')
-
     @commands.command()
     async def ping(self, ctx):
         await ctx.send("Pong!")
