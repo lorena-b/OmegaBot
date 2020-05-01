@@ -66,9 +66,8 @@ class Mod(commands.Cog):
         if not role:  # if role doesn't already exist, create it
             muted = await ctx.guild.create_role(name="Muted")
 
-        for channel in ctx.guild.channels:  # removes permission to view and send in the channels
-            await channel.set_permissions(muted, send_messages=False,
-                                          read_messages=False)
+            for channel in ctx.guild.channels:  # removes permission to view and send in all the channels
+                await channel.set_permissions(muted, send_messages=False)
 
         await member.add_roles(muted)
         if (reason == None):
@@ -80,7 +79,9 @@ class Mod(commands.Cog):
     @commands.command()
     @commands.has_guild_permissions(mute_members=True, administrator=True)
     async def unmute(self, ctx, member: discord.Member):
-        await member.remove_roles(muted)
+        role = discord.utils.get(ctx.guild.roles, name="Muted")
+        await member.remove_roles(role)
+        await ctx.send(f'{member.mention} has been unmuted.')
 
 
 def setup(client):
