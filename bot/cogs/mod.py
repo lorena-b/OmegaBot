@@ -66,7 +66,7 @@ class Mod(commands.Cog):
         if not role:  # if role doesn't already exist, create it
             muted = await ctx.guild.create_role(name="Muted")
 
-            for channel in ctx.guild.channels:  # removes permission to view and send in all the channels
+            for channel in ctx.guild.channels:  # removes permission to send in all the channels
                 await channel.set_permissions(muted, send_messages=False)
 
         await member.add_roles(muted)
